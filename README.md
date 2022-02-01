@@ -126,7 +126,6 @@ Then, the following references are added:
 - `ModComponent`
 - `ModSettings`
 - `UnhollowerBaseLib`
-- `UnhollowerRuntimeLib`
 - `UnityEngine`
 - `UnityEngine.CoreModule`
 
