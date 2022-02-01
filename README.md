@@ -1,6 +1,6 @@
 ﻿# The Long Dark Mod Template
 
-A generic project template for The Long Dark v1.81+ mods.
+A generic project template for The Long Dark mods.
 
 The main goal of this project is to make it as easy and smooth as possible to
 get into modding for TLD by automatically configuring a number of settings and
