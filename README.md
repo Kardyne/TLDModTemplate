@@ -48,7 +48,8 @@ Depending on what your mod is about, you will also need:
 
 To start creating a new mod:
 
-1. Download the latest release and unzip somewhere or fork the project.
+1. Download the latest release and unzip somewhere, fork the project or click on
+   'Use this template' on GitHub.
 1. Remove unnecessary files and folders for your mod
    - `Unity` folder if you do not plan on adding custom prefabs
    - `Distributable` folder if you do not plan on adding items, blueprints, or
