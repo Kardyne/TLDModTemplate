@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Split `Directory.Build.targets` into two, one for each project. Only the
   `CopyDLL` target remains in `Code`, the other custom targets were all kept
   for the `ModComponent` project.
+- `ReferencePath` property is no longer overridden by `Directory.Build.props`.
+  New reference paths are now inserted at the beginning of the list.
 
 ### Fixed
 

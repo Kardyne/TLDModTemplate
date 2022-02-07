@@ -35,7 +35,7 @@ Licensed under the MIT license. See LICENSE file in the project root for details
 	<!--Properties depending on TLDDir-->
 	<PropertyGroup Condition="'$(TLDDir)' != ''">
 		<!--Set reference paths for referencing game and mod assemblies-->
-		<ReferencePath>$(TLDDir)MelonLoader\;$(TLDDir)MelonLoader\Managed\;$(TLDDir)Mods\</ReferencePath>
+		<ReferencePath>$(TLDDir)MelonLoader\;$(TLDDir)MelonLoader\Managed\;$(TLDDir)Mods\;$(ReferencePath)</ReferencePath>
 		<!--Mods directory-->
 		<TLDModsDir>$(TLDDir)Mods</TLDModsDir>
 	</PropertyGroup>
