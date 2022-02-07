@@ -78,6 +78,8 @@ Additional resources:
 - TLD Modding discord
 - [ModComponent documentation](https://ds5678.github.io/ModComponent/) for
   creating custom items.
+- [ModComponent tutorial](https://github.com/stmSantana/ModComponentDocs) by
+  [@stmSantana].
 - [MelonLoader wiki](https://melonwiki.xyz/) for help in patching game
   functions.
 
@@ -192,3 +194,4 @@ All modders and members of the TLD Modding Discord.
 Hinterland for a great game.
 
 [@ds5678]: https://github.com/ds5678/
+[@stmSantana]: https://github.com/stmSantana/
