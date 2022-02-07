@@ -11,7 +11,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for notable changes between versions.
 
 ## Main features
 
-- [Auto-detects the TLD install directory for simple cases](#TLDDir).
+- [Auto-detects the TLD install directory](#TLDDir).
 - Configures [reference paths and references](#References) automatically for the project.
 - Custom targets for the [build process](#Build):
   - Builds AssetBundle files
@@ -111,11 +111,13 @@ Below is the description for the parameters:
 
 #### TLDDir
 
-The default value is set to one of those folders if found:
-- Steam: `ProgramFiles(x86)\Steam\steamapps\common\TheLongDark\`
-- Epic: `ProgramFiles\Epic Games\TheLongDark\`
+The default value is set to the Steam folder if found:
+`ProgramFiles(x86)\Steam\steamapps\common\TheLongDark\`
 
-If both are found, it defaults to the Steam install.
+By reading and parsing the `UnrealEngineLauncher` library file (usually at
+`ProgramData\Epic\UnrealEngineLauncher\LauncherInstalled.dat`), we can retrieve
+the folders of games installed through EGL. If the Steam install has not been
+found, it will use the Epic folder if it exists.
 
 ### References
 
@@ -176,8 +178,8 @@ directly from the IDE using the `Start` button in Visual Studio.
 
 ### Auto-detection
 
-Auto-detection of TLD directory is only reliable for the most common install
-locations for now. You can override values as explained in
+Auto-detection of TLD directory is only reliable for the Epic Games Launcher.
+for now. You can override values as explained in
 [Customization](#customization) if it does not work. You may need to do
 this _before_ opening the solution in Visual Studio or the project may not
 open at all.

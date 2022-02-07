@@ -14,11 +14,10 @@ Licensed under the MIT license. See LICENSE file in the project root for details
 	<!--(Try to) Autodetect TLD install
 		Chooses the Steam install over the Epic one if both are found.
 	-->
+	<Import Project="Epic.props"/>
 	<PropertyGroup Condition="'$(TLDDir)' == ''">
 		<!--Steam usual path-->
 		<TLDSteamDir>$(ProgramFiles(x86))\Steam\steamapps\common\TheLongDark\</TLDSteamDir>
-		<!--Epic usual path-->
-		<TLDEpicDir>$(ProgramFiles)\Epic Games\TheLongDark\</TLDEpicDir>
 		<TLDDir Condition="Exists('$(TLDSteamDir)')">$(TLDSteamDir)</TLDDir>
 		<TLDSteam>false</TLDSteam>
 		<TLDSteam Condition="Exists('$(TLDSteamDir)')">true</TLDSteam>
