@@ -158,9 +158,6 @@ The additional components are triggered only as needed by following
 [Incremental builds](https://docs.microsoft.com/en-us/visualstudio/msbuild/incremental-builds)
 guidelines.
 
-See [Up-to-date check](#up-to-date-check) for a common issue with the
-build process.
-
 See also:
 
 - [MSBuild Documentation](https://docs.microsoft.com/en-us/visualstudio/msbuild)
