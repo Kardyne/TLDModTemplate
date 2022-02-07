@@ -51,16 +51,20 @@ To start creating a new mod:
 1. Download the latest release and unzip somewhere, fork the project or click on
    'Use this template' on GitHub.
 1. Remove unnecessary files and folders for your mod
-   - `Unity` folder if you do not plan on adding custom prefabs
-   - `Distributable` folder if you do not plan on adding items, blueprints, or
-     tweaking loot tables.
-   - `TLDModTemplate.csproj` and the `src` folder if you do not need custom code
-     ([ModComponent_Template](https://github.com/ds5678/ModComponent_TemplateProject)
-     might be better suited for you in this case)
-1. Open `TLDModTemplate.csproj` in Visual Studio. Reference paths and assemblies
+   - `ModComponent` folder if you do not need custom items. If you plan to use
+     Visual Studio, remove the project from there _first_ before deleting
+     the folder.
+        - `ModComponent\Unity` folder if you do not plan on adding custom prefabs
+	    - `ModComponent\Distributable` folder if you do not plan on adding items,
+          blueprints, or tweaking loot tables.
+   - `Code` folder if you do not need custom game code. If you plan to use
+     Visual Studio, remove the project from there _first_ before deleting
+     the folder.
+1. Open `TLDModTemplate.sln` in Visual Studio. Reference paths and assemblies
    references should be found automatically. If not found, check
    [Customization](#customization).
-1. Rename the solution and C# project. Update the values in `BuildInfo.cs`.
+1. Rename the solution and restart Visual Studio. Update the values in
+   `BuildInfo.cs`.
 1. Check [Usage](#usage) for more information on using and customizing this
    template.
 1. [Optional but recommended] Initialize a git repository and publish on
@@ -177,16 +181,6 @@ this _before_ opening the solution in Visual Studio or the project may not
 open at all.
 
 Auto-detection of the Unity Editor executable may run into the same issues.
-
-### Up-to-date check
-
-Visual Studio has its own internal
-[Up-to-date check](https://github.com/dotnet/project-system/blob/935b8ad7d226ecf9762045590f2f7fca320eeb4f/docs/up-to-date-check.md).
-If there were no changes to the source C# files, starting a build may not
-trigger the custom targets and rules implemented in this project.
-As a workaround, you can use only rebuilds instead of simple builds. Only
-the DLL will get fully rebuilt, the AssetBundle files and ModComponent files
-will only be rebuilt if needed.
 
 ## Thanks
 

@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+### Changed
+
+- Split solution into two different projects: a C# project for custom code and
+  a [Microsoft.Build.NoTargets](https://github.com/microsoft/MSBuildSdks/blob/f3125453cc5e2751bb6fb2a374b8935163d7a69a/src/NoTargets/README.md)
+  project exclusively for ModComponent files. This should make it easier to
+  only use the template for one or the other.
+- Split `Directory.Build.targets` into two, one for each project. Only the
+  `CopyDLL` target remains in `Code`, the other custom targets were all kept
+  for the `ModComponent` project.
+
+### Fixed
+
+- Visual Studio up-to-date check not building AssetBundle or ModComponent
+  files. Using `Microsoft.Build.NoTargets` as the SDK and including all assets
+  and Distributable files into the project lets Visual Studio keep track of
+  changes.
+
 ## [1.1.0] - 2022-02-01
 
 ### Removed

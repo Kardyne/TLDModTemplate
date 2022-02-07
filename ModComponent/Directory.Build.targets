@@ -3,8 +3,7 @@
 Copyright (c) 2022 Kardyne. All rights reserved.
 Licensed under the MIT license. See LICENSE file in the project root for details.
 -->
-<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
-		 InitialTargets="BuildAssetBundles;BuildModComponent">
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<!--Properties
 		These properties must be defined here as they need the $(ProjectDir) properties
 		which is not yet available when Directory.Build.props is evaluated.
@@ -18,7 +17,8 @@ Licensed under the MIT license. See LICENSE file in the project root for details
 	<PropertyGroup>
 		<UnityProjectDir Condition="'$(UnityProjectDir)' == ''">$(ProjectDir)$(UnityProjectRelativeDir)</UnityProjectDir>
 		<ModComponentDir Condition="'$(ModComponentDir=)' == ''">$(ProjectDir)$(ModComponentRelativeDir)</ModComponentDir>
-		<ModComponentFilename Condition="'$(ModComponentFilename)' == ''">$(TargetName).modcomponent</ModComponentFilename>
+		<!--We need to use SolutionName here as TargetName is not defined and the project name is not meaningful here.-->
+		<ModComponentFilename Condition="'$(ModComponentFilename)' == ''">$(SolutionName).modcomponent</ModComponentFilename>
 		<ModComponentZip Condition="'$(ModComponentZip)' == ''">$(TargetDir)$(ModComponentFilename)</ModComponentZip>
 		<AutoMappedDir Condition="'$(AutoMappedDir)' == ''">$(ModComponentDir)auto-mapped\</AutoMappedDir>
 	</PropertyGroup>
@@ -46,7 +46,8 @@ Licensed under the MIT license. See LICENSE file in the project root for details
 			Condition="Exists('$(UnityProjectDir)')"
 			Inputs="@(UnityAssetFiles)"
 			Outputs="@(AssetBundleFiles)"
-			DependsOnTargets="FindAssetBundleFiles;FindUnityAssetFiles">
+			DependsOnTargets="FindAssetBundleFiles;FindUnityAssetFiles"
+			AfterTargets="Build">
 		<Message Importance="high" Text="Building Asset Bundles for Unity project at '$(UnityProjectDir)'" />
 		<Exec StandardOutputImportance="normal" Command="&quot;$(UnityEditorPath)&quot; -projectPath &quot;$(UnityProjectDir)&quot; -executeMethod &quot;BuildAssetBundles.ExportResource&quot; -batchmode -nographics -noUpm -silent-crashes -quit" />
 	</Target>
@@ -72,7 +73,8 @@ Licensed under the MIT license. See LICENSE file in the project root for details
 			Condition="Exists('$(ModComponentDir)')"
 			Inputs="@(ModComponentFiles)"
 			Outputs="$(ModComponentZip)"
-			DependsOnTargets="FindModComponentFiles">
+			DependsOnTargets="FindModComponentFiles"
+			AfterTargets="Build">
 		<Message Importance="high" Text="Zipping ModComponent files at '$(ModComponentDir)'" />
 		<ZipDirectory SourceDirectory="$(ModComponentDir)" DestinationFile="$(ModComponentZip)" Overwrite="true"/>
 	</Target>
@@ -86,13 +88,5 @@ Licensed under the MIT license. See LICENSE file in the project root for details
 			AfterTargets="BuildModComponent">
 		<Message Importance="high" Text="Copying ModComponent file at '$(ModComponentZip)' to '$(TLDModsDir)'" />
 		<Copy SourceFiles="$(ModComponentZip)" DestinationFolder="$(TLDModsDir)" />
-	</Target>
-	<Target Name="CopyDLL"
-			Condition="'$(Configuration)' == 'Debug' And Exists('$(TLDModsDir)')"
-			Inputs="$(TargetPath)"
-			Outputs="$(TLDModsDir)\$(TargetFileName)"
-			AfterTargets="Build">
-		<Message Importance="high" Text="Copying DLL at '$(TargetPath)' to '$(TLDModsDir)'" />
-		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(TLDModsDir)" />
 	</Target>
 </Project>
