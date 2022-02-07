@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Epic install detection now reads and parses the `UnrealEngineLauncher`
   library file (the location of which is obtained through the Windows
   registry). This should make it pretty reliable.
+- Steam install detection now gets the default Steam library location from
+  the registry. Other Steam libraries are not checked for TLD installs, but
+  this should still make it more reliable.
 
 ## [2.0.0] - 2022-02-07
 

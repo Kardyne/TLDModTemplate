@@ -111,8 +111,10 @@ Below is the description for the parameters:
 
 #### TLDDir
 
-The default value is set to the Steam folder if found:
-`ProgramFiles(x86)\Steam\steamapps\common\TheLongDark\`
+The default value is set to the Steam folder if found in the default library.
+The location of the Steam install is saved in the Windows registry which
+contains the default Steam library folder. If your Steam TLD install is
+not located in this library, see [Customization](Customization).
 
 By reading and parsing the `UnrealEngineLauncher` library file (usually at
 `ProgramData\Epic\UnrealEngineLauncher\LauncherInstalled.dat`), we can retrieve
