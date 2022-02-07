@@ -70,9 +70,6 @@ To start creating a new mod:
 1. [Optional but recommended] Initialize a git repository and publish on
    GitHub. See [GitHub - Get started](https://docs.github.com/en/get-started).
 
-Note: do _not_ remove `ProjectParameters.props` without first removing
-`Directory.Build.props` or Visual Studio will be unable to open your project.
-
 Additional resources:
 
 - TLD Modding discord

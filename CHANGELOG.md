@@ -15,6 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   the registry. Other Steam libraries are not checked for TLD installs, but
   this should still make it more reliable.
 
+### Fixed
+
+- Visual Studio can now open the solution even if the `Epic.props`
+  `ProjectParameters.props` or `Steam.props` files are missing.
+
 ## [2.0.0] - 2022-02-07
 
 ### Changed

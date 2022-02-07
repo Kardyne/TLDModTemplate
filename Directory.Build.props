@@ -4,7 +4,7 @@ Copyright (c) 2022 Kardyne. All rights reserved.
 Licensed under the MIT license. See LICENSE file in the project root for details.
 -->
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<Import Project="ProjectParameters.props"/>
+	<Import Condition="Exists('ProjectParameters.props')" Project="ProjectParameters.props"/>
 	<!--Default values-->
 	<PropertyGroup>
 		<UnityEditorPath Condition="'$(UnityEditorPath)' == ''">$(ProgramFiles)\Unity\Editor\Unity.exe</UnityEditorPath>
@@ -14,8 +14,8 @@ Licensed under the MIT license. See LICENSE file in the project root for details
 	<!--(Try to) Autodetect TLD install
 		Chooses the Steam install over the Epic one if both are found.
 	-->
-	<Import Project="Epic.props"/>
-	<Import Project="Steam.props"/>
+	<Import Condition="Exists('Epic.props')" Project="Epic.props"/>
+	<Import Condition="Exists('Steam.props')" Project="Steam.props"/>
 	<PropertyGroup Condition="'$(TLDDir)' == ''">
 		<TLDDir Condition="Exists('$(TLDSteamDir)')">$(TLDSteamDir)</TLDDir>
 		<TLDSteam>false</TLDSteam>
