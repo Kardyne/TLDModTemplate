@@ -18,7 +18,7 @@ Licensed under the MIT license. See LICENSE file in the project root for details
 		<UnityProjectDir Condition="'$(UnityProjectDir)' == ''">$(ProjectDir)$(UnityProjectRelativeDir)</UnityProjectDir>
 		<ModComponentDir Condition="'$(ModComponentDir=)' == ''">$(ProjectDir)$(ModComponentRelativeDir)</ModComponentDir>
 		<!--We need to use SolutionName here as TargetName is not defined and the project name is not meaningful here.-->
-		<ModComponentFilename Condition="'$(ModComponentFilename)' == ''">$(SolutionName).modcomponent</ModComponentFilename>
+		<ModComponentFilename Condition="'$(ModComponentFilename)' == ''">$(TargetName).modcomponent</ModComponentFilename>
 		<ModComponentZip Condition="'$(ModComponentZip)' == ''">$(TargetDir)$(ModComponentFilename)</ModComponentZip>
 		<AutoMappedDir Condition="'$(AutoMappedDir)' == ''">$(ModComponentDir)auto-mapped\</AutoMappedDir>
 	</PropertyGroup>

@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Steam install detection now gets the default Steam library location from
   the registry. Other Steam libraries are not checked for TLD installs, but
   this should still make it more reliable.
+- Set ModComponent project's `AssemblyName` property to `SolutionName` and
+  change `ModComponentFilename` to reference `TargetName` (based on
+  `AssemblyName`) instead of `SolutionName`.
 
 ### Fixed
 

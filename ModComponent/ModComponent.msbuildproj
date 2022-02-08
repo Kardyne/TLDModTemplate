@@ -3,6 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <ProjectGuid>{E17ECE66-B590-49BA-AB9B-9B58FDE01D56}</ProjectGuid>
+    <AssemblyName>$(SolutionName)</AssemblyName>
     <TargetFramework>net472</TargetFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
