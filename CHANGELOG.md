@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [2.2.0] - 2022-02-09
+
 ### Changed
 
 - Build extensions are now in their own `Kardyne.TLDBuildExtensions` NuGet
@@ -98,6 +100,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Relative path to the unity project directory `UnityProjectRelativeDir`
   - Relative path to the ModComponent directory `ModComponentRelativeDir`
 
+[2.2.0]: https://github.com/kardyne/TLDModTemplate/releases/tag/v2.2.0
 [2.1.0]: https://github.com/kardyne/TLDModTemplate/releases/tag/v2.1.0
 [2.0.0]: https://github.com/kardyne/TLDModTemplate/releases/tag/v2.0.0
 [1.1.0]: https://github.com/kardyne/TLDModTemplate/releases/tag/v1.1.0
