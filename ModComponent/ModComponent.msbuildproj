@@ -17,7 +17,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="Directory.Build.targets" />
     <None Include="Distributable\auto-mapped\DELETE_ME" />
     <None Include="Distributable\blueprints\DELETE_ME" />
     <None Include="Distributable\gear-spawns\DELETE_ME" />
@@ -75,5 +74,8 @@
   <ItemGroup>
     <Content Include="Unity\Assets\InventoryGridIcons\ico_GearItem__SampleItem.png" />
     <Content Include="Unity\ProjectSettings\ProjectVersion.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Kardyne.TLDBuildExtensions" Version="1.0.0" />
   </ItemGroup>
 </Project>

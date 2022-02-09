@@ -74,7 +74,9 @@
     <Compile Include="Implementation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Directory.Build.targets" />
+    <PackageReference Include="Kardyne.TLDBuildExtensions">
+      <Version>1.0.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
