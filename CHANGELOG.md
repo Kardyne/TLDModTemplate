@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Reference to `0Harmony`, following `MelonLoader` upstream changes.
+
 ## [2.2.0] - 2022-02-09
 
 ### Changed
