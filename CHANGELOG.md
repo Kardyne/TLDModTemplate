@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Reference to `0Harmony`, following `MelonLoader` upstream changes.
 
+### Changed
+
+- Unity project updated to Unity version `2019.4.34f1`, same as The Long Dark
+  version `2.00`.
+
 ## [2.2.0] - 2022-02-09
 
 ### Changed
